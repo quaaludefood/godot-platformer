@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/new_dynamicfont.tres" type="DynamicFont" id=1]
+
+[node name="Title" type="Label"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -142.0
+margin_top = 168.0
+margin_right = 149.0
+margin_bottom = 233.0
+rect_pivot_offset = Vector2( 155, 15.5 )
+custom_fonts/font = ExtResource( 1 )
+text = "Title
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=4]
+[ext_resource path="res://src/UserInterface/RetryButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=6]
+
+[node name="UserInterface" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -420.0
+margin_top = 24.0
+margin_right = -299.0
+margin_bottom = 55.0
+text = "Score: %s"
+align = 2
+
+[node name="PauseOverlay" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.258824 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" type="VBoxContainer" parent="PauseOverlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -186.0
+margin_top = -132.0
+margin_right = 186.0
+margin_bottom = 132.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetryButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 5 )]
+margin_right = 372.0
+margin_bottom = 85.0
+
+[node name="PlayButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 1 )]
+margin_top = 89.0
+margin_right = 372.0
+margin_bottom = 174.0
+text = "Main Scene"
+next_scene_path = "res://src/UserInterface/MainScreen.tscn"
+
+[node name="QuitButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 2 )]
+margin_top = 178.0
+margin_right = 372.0
+margin_bottom = 264.0
+
+[node name="Title" parent="PauseOverlay" instance=ExtResource( 3 )]
+margin_top = 296.0
+margin_bottom = 361.0
+text = "PAUSED
+"
